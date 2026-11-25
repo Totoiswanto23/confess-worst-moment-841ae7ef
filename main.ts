@@ -19,6 +19,10 @@ if (MESSAGE.includes('\n') || MESSAGE.includes('\r')) {
   console.error('entry must be a single line');
   process.exit(1);
 }
+if (MESSAGE.includes('\t')) {
+  console.error('entry must not contain tab characters');
+  process.exit(1);
+}
 if (MESSAGE !== MESSAGE.trim()) {
   console.error('entry must not start or end with whitespace');
   process.exit(1);
